@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
       <img src={logo} alt='Life Decisons' height={250} width={250} />
         <p>
-          <h1 >Life Decisions Game Under Construction.</h1>
+          <h1 >Life Decisions Under Construction.</h1>
         </p>
         
       </header>
