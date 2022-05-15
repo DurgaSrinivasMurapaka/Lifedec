@@ -1,3 +1,4 @@
+import logo from './Life-Decisions.png'
 import './App.css';
 //test command for commit
 function App() {
@@ -5,9 +6,9 @@ function App() {
     
     <div className="App">
       <header className="App-header">
-        
+      <img src={logo} alt='Life Decisons' height={250} width={250} />
         <p>
-          <code>Life Decisions game will be here.</code>
+          <h1 >Life Decisions Game Under Construction.</h1>
         </p>
         
       </header>
