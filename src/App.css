@@ -1,5 +1,5 @@
 .container{
-  background-image: url(./background-img.jpg), linear-gradient(#02020252, #00000056);
+  background-image: url(./2078293.jpg), linear-gradient(#02020252, #00000056);
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -10,6 +10,8 @@
 
 }
 h1 {
-  color:  rgb(207, 40, 40);
-}
-
+  font-size: 55px;
+  background: -webkit-linear-gradient(#eee, rgb(64, 137, 150));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
