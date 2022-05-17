@@ -1,19 +1,21 @@
-import logo from './life-dec-transparent.png'
 import './App.css';
+import React from 'react'
 //test command for commit
-function App() {
-  return (
+
     
-    <div className="container">
+    
+  const App = () => {
+    return (
       
-      <img src={logo} alt='Life Decisons' height={300} width={300} />
-        <p>
-          <h1 >Life Decisions Under Construction.</h1>
-        </p>
-        
+      <div className="container">
+        <input type="button" value="Next Decision" onclick="msg()"/>
+      </div>
+    )
+  }
+    
+    
       
-    </div>
-  );
-}
+  
+
 
 export default App;
