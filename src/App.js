@@ -12,11 +12,11 @@ import React from 'react'
 
 
         <div class="buttons">
-		      <button name="submit" class="action_btn Ledger" type="submit" value="Ledger" onclick="myFunction()">Ledger</button>
+		      <button name="submit" class="button1" type="submit" value="Ledger" onclick="myFunction()"><span>Ledger</span></button>
           <div class="space"></div>
-          <button name="submit" class="action_btn Next" type="submit" value="Next" onclick="myFunction2()">Next Decision</button>
+          <button name="submit" class="button" type="submit" value="Next" onclick="myFunction2()">Next Decision</button>
           <div class="space"></div>
-		      <button name="submit" class="action_btn Stats" type="submit" value="Stats" onclick="myFunction2()">Stats</button>
+		      <button name="submit" class="button1" type="submit" value="Stats" onclick="myFunction3()"><span>Stats</span></button>
 		    <p id="saved"></p>
         </div>
 
