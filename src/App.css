@@ -15,3 +15,21 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   }
+
+  .buttons {
+    width: 250px;
+    
+    
+  }
+  
+  .action_btn {
+    display: inline-block;
+  
+    margin: 0 auto;
+  }
+  
+  .space {
+    width: 22px;
+    height: auto;
+    display: inline-block;
+  }
