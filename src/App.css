@@ -17,7 +17,7 @@ h1 {
   }
 
   .buttons {
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: center;
     
@@ -36,7 +36,7 @@ h1 {
   }
   
   .space {
-    width: 10%;
+    width: 5%;
     height: auto;
     display: inline-block;
   }
