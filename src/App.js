@@ -10,7 +10,7 @@ import React from 'react'
       <div className="container">
 
 
-
+        
         <div class="buttons">
 		      <button name="submit" class="button1" type="submit" value="Ledger" onclick="myFunction()"><span>Ledger</span></button>
           <div class="space"></div>
