@@ -1,4 +1,4 @@
-.container{
+.container {
   background-image: url(./2078293.jpg), linear-gradient(#02020252, #00000056);
   background-size: cover;
   height: 100vh;
@@ -6,41 +6,36 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
-
 }
 h1 {
-  font-size: 55px;
+  /* font-size: 55px;
   background: -webkit-linear-gradient(#eee, rgb(64, 137, 150));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
+  -webkit-text-fill-color: transparent; */
+}
 
-  .buttons {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    
-    
-  }
-  
-  .action_btn {
-    background-color: #4CAF50; /* Green */
-    border: ;
-    color: rgb(5, 0, 0);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-  
-  .space {
-    width: 5%;
-    height: auto;
-    display: inline-block;
-  }
+.buttons {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
 
+.action_btn {
+  background-color: #4caf50; /* Green */
+  border: ;
+  color: rgb(5, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.space {
+  width: 5%;
+  height: auto;
+  display: inline-block;
+}
 
 .button {
   display: inline-block;
@@ -51,13 +46,15 @@ h1 {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+  background-color: #3e8e41;
+}
 
 .button:active {
   background-color: #3e8e41;
@@ -65,13 +62,12 @@ h1 {
   transform: translateY(4px);
 }
 
-
 .button1 {
   display: inline-block;
   border-radius: 50%;
   background-color: #cd398b;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   font-size: 100%;
   padding: 2%;
@@ -89,7 +85,7 @@ h1 {
 }
 
 .button1 span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
