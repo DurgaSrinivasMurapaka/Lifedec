@@ -8,7 +8,7 @@ const App = () => {
     {
       id: 1,
       question: "Do you want to buy Lemonade Stand",
-      amount: 100,
+      amount: 1000,
     },
     {
       id: 2,

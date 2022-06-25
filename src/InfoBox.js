@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 
 const InfoBox = ({ currentDecision, balance, setBalance, payCheck }) => {
   if (!currentDecision) {
@@ -15,7 +16,7 @@ const InfoBox = ({ currentDecision, balance, setBalance, payCheck }) => {
           alignContent: "center",
         }}
       >
-        <h1>No Decision</h1>
+        <h1>Click Next Decision to start</h1>
       </div>
     );
   }
@@ -38,10 +39,12 @@ const InfoBox = ({ currentDecision, balance, setBalance, payCheck }) => {
         }}
       >
         <span>
-          <p>Paycheck</p> <p>{payCheck}$</p>
+          <p style={{marginTop: 0, paddingtop:0}}>Paycheck</p>
+          <p class="strong" style={{marginTop: 0, paddingtop:0}}>{payCheck}$</p>
         </span>
         <span>
-          <p>Balance</p> <p>{balance}$</p>
+          <p style={{marginTop: 0, paddingtop:0}}>Balance</p> 
+          <p class="strong" style={{marginTop: 0, paddingtop:0}}>{balance}$</p>
         </span>
       </div>
 
