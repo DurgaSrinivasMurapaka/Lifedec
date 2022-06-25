@@ -9,27 +9,35 @@ const App = () => {
       id: 1,
       question: "Do you want to buy Lemonade Stand",
       amount: 1000,
+      pay:50
     },
     {
       id: 2,
       question: "Do you want to buy Lemonade Stand 2",
       amount: 200,
+      pay:50
+
     },
     {
       id: 3,
       question: "Do you want to buy Lemonade Stand 3",
       amount: 300,
+      pay:50
+
     },
     {
       id: 4,
       question: "Do you want to buy Lemonade Stand 4",
       amount: 400,
+      pay:50
+
     },
   ];
 
   const [currentDecision, setCurrentDecision] = useState();
 
-  const [balance, setBalance] = useState(5000);
+  const [balance, setBalance] = useState(1000);
+  const [payCheck, setPaycheck] = useState(1000);
 
   const getDecision = () => {
     const max = decisions.length;
@@ -38,7 +46,7 @@ const App = () => {
     setCurrentDecision(decisions[decision]);
   };
 
-  const [payCheck, setPayCheck] = useState(0);
+
   // useEffect(() => {
   //   let isUnmounted = false;
 
@@ -68,6 +76,7 @@ const App = () => {
         balance={balance}
         setBalance={setBalance}
         payCheck={payCheck}
+        setPaycheck={setPaycheck}
       />
       <div class="buttons">
         <button

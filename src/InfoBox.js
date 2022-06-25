@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const InfoBox = ({ currentDecision, balance, setBalance, payCheck }) => {
+const InfoBox = ({ currentDecision, balance, setBalance, payCheck, setPaycheck }) => {
   if (!currentDecision) {
     return (
       <div
@@ -57,7 +57,9 @@ const InfoBox = ({ currentDecision, balance, setBalance, payCheck }) => {
           style={{ height: 30, width: 100 }}
           onClick={() => {
             let newBalance = balance - currentDecision.amount;
+            let newpayCheck = payCheck + currentDecision.pay;
             setBalance(newBalance);
+            setPaycheck(newpayCheck);
           }}
         >
           Yes
