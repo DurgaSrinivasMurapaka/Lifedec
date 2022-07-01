@@ -1,33 +1,34 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import InfoBox from "./InfoBox";
+
 //test command for commit
 
-const App = () => {
+const App = ({}) => {
   let decisions = [
     {
       id: 1,
-      question: "Do you want to buy Lemonade Stand",
+      question: "Do you want to buy Icecream Stand? Cost: 1000$ Paycheck: 50$ ",
       amount: 1000,
       pay:50
     },
     {
       id: 2,
-      question: "Do you want to buy Lemonade Stand 2",
+      question: "Do you want to buy Bycicle shop",
       amount: 200,
       pay:50
 
     },
     {
       id: 3,
-      question: "Do you want to buy Lemonade Stand 3",
+      question: "Do you want to buy Juice shop",
       amount: 300,
       pay:50
 
     },
     {
       id: 4,
-      question: "Do you want to buy Lemonade Stand 4",
+      question: "Do you want to buy Mechanic Shop",
       amount: 400,
       pay:50
 
@@ -37,8 +38,9 @@ const App = () => {
   const [currentDecision, setCurrentDecision] = useState();
 
   const [balance, setBalance] = useState(1000);
+  const [date, setdate] = useState(0);
   const [payCheck, setPaycheck] = useState(1000);
-
+  
   const getDecision = () => {
     const max = decisions.length;
     const decision = Math.floor(Math.random() * (max - 0)) + 0;
@@ -47,20 +49,25 @@ const App = () => {
   };
 
 
-  // useEffect(() => {
-  //   let isUnmounted = false;
+  let decisionCount = 0;
+  
 
-  //   setTimeout(() => {
-  //     if (!isUnmounted) {
-  //       let newPaycheck = payCheck + 50;
-  //       setPayCheck(newPaycheck);
-  //     }
-  //   }, 5000);
+  // // useEffect(() => {
+  // //   let isUnmounted = false;
 
-  //   return () => {
-  //     isUnmounted = true;
-  //   };
-  // }, [payCheck]);
+  // //   setTimeout(() => {
+  // //     if (!isUnmounted) {
+  // //       let newPaycheck = payCheck + 50;
+  // //       setPayCheck(newPaycheck);
+  // //     }
+  // //   }, 5000);
+
+  // //   return () => {
+  // //     isUnmounted = true;
+  // //   };
+  // // }, [payCheck]);
+
+
   return (
     <div
       className="container"
@@ -75,6 +82,8 @@ const App = () => {
         currentDecision={currentDecision}
         balance={balance}
         setBalance={setBalance}
+        date={date}
+        setdate={setdate}
         payCheck={payCheck}
         setPaycheck={setPaycheck}
       />
@@ -88,16 +97,28 @@ const App = () => {
         >
           <span>Ledger</span>
         </button>
+
+        
+
         <div class="space"></div>
         <button
           name="submit"
           class="button"
           type="submit"
           value="Next"
-          onClick={getDecision}
+          
+          onClick= {()=>{getDecision(); 
+            decisionCount = decisionCount +1;
+            if(decisionCount%4===0){
+              balance = balance +payCheck
+            }
+          }}
         >
           Next Decision
         </button>
+
+
+
         <div class="space"></div>
         <button
           name="submit"
