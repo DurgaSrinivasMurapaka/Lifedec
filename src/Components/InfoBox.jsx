@@ -8,6 +8,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
   if (!currentDecision) {
     return (
       <div
+        class="l-bg-light"
         style={{
           height: 400,
           width: 500,
@@ -20,7 +21,12 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
           alignContent: "center",
         }}
       >
-        <h1 button class="btn btn-danger" style={{ justifyContent: "center",paddingtop:5}}>Click Next Decision to start</h1>
+        <div button class="btn btn-danger l-bg-red " style={{ 
+       width:"60%", justifyContent: "center", verticalAlign:"middle"
+
+      }}>
+        <h5>Click Next Decision to start</h5>
+      </div>
       </div>
     );
   }
@@ -29,6 +35,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
 
   return (
     <div
+      class="l-bg-light"
       style={{
         height: 400,
         width: 500,
@@ -46,17 +53,17 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
         }}
       >
         <span>
-          <p style={{ marginTop: 0, paddingtop: 0 }}>Pay per month</p>
+          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Pay per month</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>{payCheck}₹</p>
         </span>
 
         <span>
-          <p style={{ marginTop: 0, paddingtop: 0 }}>Date</p>
+          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Date</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>Week: {date}</p>
         </span>
 
         <span>
-          <p style={{ marginTop: 0, paddingtop: 0 }}>Balance</p>
+          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Balance</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>{balance}₹</p>
         </span>
       </div>

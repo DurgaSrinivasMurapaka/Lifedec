@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap";
 import "popper.js/dist/umd/popper"
 import "bootstrap/dist/css/bootstrap.css"
 
+
 const App = ({}) => {
   let decisions = [
     {
@@ -102,10 +103,10 @@ const App = ({}) => {
         setPaycheck={setPaycheck}
       />
       <div class="buttons">
-        
+
       <Popup trigger={<button class="btn_danger"
           name="submit"
-          class="button1"
+          className="button1"
           type="submit"
           value="Ledger"
           onclick="myFunction()"

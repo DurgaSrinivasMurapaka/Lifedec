@@ -176,7 +176,16 @@
 }
 
 .l-bg-cyan {
-    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    background: linear-gradient(135deg, #105f9c, #8e9fab) !important;
     color: #fff;
 }
 
+.l-bg-light {
+  background: linear-gradient(to right, #d8cfd7, #97d4df) !important;
+  color: #fff;
+}
+
+.l-bg-red {
+  background: linear-gradient(to right, #e75e43, #e74444) !important;
+  color: #fff;
+}
