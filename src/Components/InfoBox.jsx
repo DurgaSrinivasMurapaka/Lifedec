@@ -1,11 +1,11 @@
-import React,{useState }  from "react";
+import React from "react";
 import "jquery";
 import "bootstrap/dist/js/bootstrap";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/css/bootstrap.css";
 
 
-function InfoBox({decisionCount, setdecisionCount, currentDecision, balance, setBalance, date, setdate, payCheck, setPaycheck }) {
+function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecision, balance, setBalance, date, setdate, payCheck, setPaycheck }) {
   if (!currentDecision) {
     return (
       <div
@@ -53,19 +53,21 @@ function InfoBox({decisionCount, setdecisionCount, currentDecision, balance, set
           flexDirection: "row",
           justifyContent: "space-between",
           textAlign: "center",
+          alignItems:"center",
+          verticalAlign:"middle"
         }}
       >
-        <span>
-          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Pay per month</p>
+        <span style={{display:"inline-block"}}>
+          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Monthly Profit </p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>{payCheck}₹</p>
         </span>
 
-        <span>
+        <span style={{display:"inline-block"}}>
           <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Date</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>Week: {decisionCount}</p>
         </span>
 
-        <span>
+        <span style={{display:"inline-block"}}>
           <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Balance</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>{balance}₹</p>
         </span>
@@ -87,7 +89,7 @@ function InfoBox({decisionCount, setdecisionCount, currentDecision, balance, set
                 </h2>
               </div>
               <div class="col-4 text-right">
-                <span style={{}}>Pay per month: {currentDecision.pay}₹</span>
+                <span style={{}}>Profit per month: {currentDecision.pay}₹</span>
               </div>
             </div>
 
@@ -103,12 +105,20 @@ function InfoBox({decisionCount, setdecisionCount, currentDecision, balance, set
           class="btn btn-primary btn-rounded btn-lg"
           style={{ justifyContent: "center", borderRadius: 40 }}
           onClick={() => {
-            
-            let newBalance = balance - currentDecision.amount;
-            let newpayCheck = payCheck + currentDecision.pay;
-            
-            setBalance(newBalance);
-            setPaycheck(newpayCheck);
+            if (flag===0 && balance-currentDecision.amount>0){
+              let newBalance = balance - currentDecision.amount;
+              let newpayCheck = payCheck + currentDecision.pay;
+              
+              setBalance(newBalance);
+              setPaycheck(newpayCheck);
+              setflag(1);
+            }
+            else if( balance-currentDecision.amount<0){
+              alert("You cant afford it!");
+            }
+            else{ 
+              alert("Bought Already!");
+            }
 
           }}
         >

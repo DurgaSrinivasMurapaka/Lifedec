@@ -55,10 +55,9 @@ const App = ({ }) => {
   let [decisionCount,setdecisionCount]=useState(0);
 
   const [currentDecision, setCurrentDecision] = useState();
-  
+  const [flag,setflag]=useState();
   const [balance, setBalance] = useState(1000);
-  const [date, setdate] = useState(0);
-  const [payCheck, setPaycheck] = useState(1000);
+  const [payCheck, setPaycheck] = useState(100);
 
   const getDecision = () => {
     setdecisionCount(decisionCount=decisionCount+1);
@@ -98,12 +97,12 @@ const App = ({ }) => {
         currentDecision={currentDecision}
         balance={balance}
         setBalance={setBalance}
-        date={date}
-        setdate={setdate}
         payCheck={payCheck}
         setPaycheck={setPaycheck}
         decisionCount={decisionCount}
         setdecisionCount={setdecisionCount}
+        flag={flag}
+        setflag={setflag}
       />
       <div class="buttons">
 
@@ -142,8 +141,7 @@ const App = ({ }) => {
             if (decisionCount % 4 === 0) {
               setBalance(balance + payCheck)
             }
-            date = date + 1
-            setdate(date);
+            setflag(0);
           }}
         >
           Next Decision
