@@ -52,18 +52,18 @@ const App = ({ }) => {
 
     },
   ];
-  let [decisionCount,setdecisionCount]=useState(0);
+  let [decisionCount, setdecisionCount] = useState(0);
 
   const [currentDecision, setCurrentDecision] = useState();
-  const [flag,setflag]=useState();
+  const [flag, setflag] = useState();
   const [balance, setBalance] = useState(1000);
   const [payCheck, setPaycheck] = useState(100);
 
   const getDecision = () => {
-    setdecisionCount(decisionCount=decisionCount+1);
+    setdecisionCount(decisionCount = decisionCount + 1);
     const max = decisions.length;
     const decision = Math.floor(Math.random() * (max - 0)) + 0;
-    
+
     setCurrentDecision(decisions[decision]);
   };
 
@@ -114,12 +114,12 @@ const App = ({ }) => {
           onclick="myFunction()"
         >
 
-          <span>Ledger</span>
+          <span><h5>Stats</h5></span>
         </button>}
           position="left center"
-          
+
         >
-          <span style={{ color: "white"}}>Coming soon</span>
+          <span style={{ color: "white" }}>Coming soon</span>
 
 
 
@@ -134,10 +134,10 @@ const App = ({ }) => {
           type="submit"
           value="Next"
 
-          onClick={() => {          
+          onClick={() => {
 
             getDecision();
-            
+
             if (decisionCount % 4 === 0) {
               setBalance(balance + payCheck)
             }
@@ -149,22 +149,69 @@ const App = ({ }) => {
 
         <div class="space"></div>
 
-        <Popup trigger={<button
+
+        <Popup trigger={<button class="btn_danger"
           name="submit"
-          class="button1"
+          className="button1"
           type="submit"
-          value="Stats"
-          onclick="myFunction3()"
+          value="Ledger"
+          onclick="myFunction()"
         >
-          <span>Stats</span>
-        </button>}
-          position="right center"
-        >
-          <span style={{ color: "white", paddingLeft:"10px" }}>Coming soon</span>
+          <span><h5>Info</h5></span>
+        </button>} modal>
 
+          <div class="card bg-light mb-3" >
+            <div class="card-header">Life Decisions</div>
+            <div class="card-body">
+              <h5 class="card-title">Information:</h5>
+              <p class="card-text">
+                1. Every Decision passed equalled for one week.<br/>
+                2. Every four weeks equalled for one month, <br/>
+                3. For every month, You will receive a payment from your assets.<br/>
+                4. Gain up assets and become financially stable.<br/>
 
+                <h5 style={{textAlign:"center",paddingTop:"12px", paddingBottom:"10px"}}>Good Luck!</h5>
+
+              </p>
+            </div>
+          </div>
         </Popup>
-        <p id="saved"></p>
+
+        {/* <Popup trigger={<button
+          
+          class="button1"
+           >
+          Info
+        </button>}
+          modal 
+          
+          >
+
+
+          {close => (
+            <div className="modal">
+              <button className="close" onClick={close}>
+                &times;
+              </button>
+              <div className="header"> Information </div>
+              <div className="content">
+                {' '}
+                Information about Life Decisions
+              </div>
+              <button
+            className="button"
+            onClick={() => {
+              console.log('modal closed ');
+              close();
+            }}
+          >
+            close modal
+          </button>
+            </div>
+          )}
+
+
+        </Popup> */}
 
 
       </div>
