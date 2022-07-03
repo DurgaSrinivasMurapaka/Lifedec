@@ -105,7 +105,7 @@ function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecisio
           class="btn btn-primary btn-rounded btn-lg"
           style={{ justifyContent: "center", borderRadius: 40 }}
           onClick={() => {
-            if (flag===0 && balance-currentDecision.amount>0){
+            if (flag===0 && balance-currentDecision.amount>=0){
               let newBalance = balance - currentDecision.amount;
               let newpayCheck = payCheck + currentDecision.pay;
               
@@ -113,7 +113,7 @@ function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecisio
               setPaycheck(newpayCheck);
               setflag(1);
             }
-            else if( balance-currentDecision.amount<0){
+            else if( balance-currentDecision.amount<=0){
               alert("You cant afford it!");
             }
             else{ 
