@@ -8,47 +8,47 @@ import "popper.js/dist/umd/popper"
 import "bootstrap/dist/css/bootstrap.css"
 
 
-const App = ({}) => {
+const App = ({ }) => {
   let decisions = [
     {
       id: 1,
       question: "Icecream stand for sale. Owner wants to sell cheap",
       amount: 1000,
-      pay:50
+      pay: 50
     },
     {
       id: 2,
       question: "Do you want to buy Bycicle shop",
       amount: 1430,
-      pay:80
+      pay: 80
 
     },
     {
       id: 3,
       question: "Do you want to buy Juice shop",
       amount: 1500,
-      pay:50
+      pay: 50
 
     },
     {
       id: 4,
       question: "Mechanic Shop goes for sale",
       amount: 1100,
-      pay:59
+      pay: 59
 
     },
     {
       id: 5,
       question: "Grocery store for sale",
       amount: 4000,
-      pay:485
+      pay: 485
 
     },
     {
       id: 6,
       question: "Plumberware shop is on sale",
       amount: 6790,
-      pay:510
+      pay: 510
 
     },
   ];
@@ -59,7 +59,7 @@ const App = ({}) => {
   const [balance, setBalance] = useState(1000);
   const [date, setdate] = useState(0);
   const [payCheck, setPaycheck] = useState(1000);
-  
+
   const getDecision = () => {
     const max = decisions.length;
     const decision = Math.floor(Math.random() * (max - 0)) + 0;
@@ -67,7 +67,7 @@ const App = ({}) => {
     setCurrentDecision(decisions[decision]);
   };
 
-  
+
 
   // // useEffect(() => {
   // //   let isUnmounted = false;
@@ -86,12 +86,12 @@ const App = ({}) => {
 
 
   return (
-    
+
     <div
       className="cont"
-      
+
     >
-      
+
 
       <InfoBox
         currentDecision={currentDecision}
@@ -104,24 +104,26 @@ const App = ({}) => {
       />
       <div class="buttons">
 
-      <Popup trigger={<button class="btn_danger"
+        <Popup trigger={<button class="btn_danger"
           name="submit"
           className="button1"
           type="submit"
           value="Ledger"
           onclick="myFunction()"
         >
-          
+
           <span>Ledger</span>
         </button>}
-        position="left center"
+          position="left center"
+          
         >
-        Coming soon
-        
+          <span style={{ color: "white"}}>Coming soon</span>
+
+
 
         </Popup>
 
-        
+
 
         <div class="space"></div>
         <button
@@ -129,14 +131,15 @@ const App = ({}) => {
           class="button"
           type="submit"
           value="Next"
-          
-          onClick= {()=>{getDecision(); 
-            decisionCount = decisionCount +1;
+
+          onClick={() => {
+            getDecision();
+            decisionCount = decisionCount + 1;
             console.log(decisionCount)
-            if(decisionCount%4===0){
-              balance = balance +payCheck
+            if (decisionCount % 4 === 0) {
+              balance = balance + payCheck
             }
-            date = date +1
+            date = date + 1
             setdate(date);
           }}
         >
@@ -153,16 +156,16 @@ const App = ({}) => {
           onclick="myFunction3()"
         >
           <span>Stats</span>
-        </button>} 
-        position="right center"
+        </button>}
+          position="right center"
         >
-        Coming soon
-        
+          <span style={{ color: "white", paddingLeft:"10px" }}>Coming soon</span>
+
 
         </Popup>
         <p id="saved"></p>
 
-        
+
       </div>
     </div>
   );

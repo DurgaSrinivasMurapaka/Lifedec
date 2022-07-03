@@ -73,7 +73,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
 
         <div class="card l-bg-green-dark">
           <div class="card-statistic-3 p-4">
-            <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+            <div class="card-icon card-icon-large"></div>
             <div class="mb-4">
               <h5 class="card-title mb-0">{currentDecision.question}</h5>
             </div>
@@ -84,7 +84,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
                 </h2>
               </div>
               <div class="col-4 text-right">
-                <span style={{}}>Pay per month: {currentDecision.pay}₹<i class="fa fa-arrow-up"></i></span>
+                <span style={{}}>Pay per month: {currentDecision.pay}₹</span>
               </div>
             </div>
 
