@@ -52,18 +52,19 @@ const App = ({ }) => {
 
     },
   ];
-  let decisionCount = 0;
+  let [decisionCount,setdecisionCount]=useState(0);
 
   const [currentDecision, setCurrentDecision] = useState();
-
+  
   const [balance, setBalance] = useState(1000);
   const [date, setdate] = useState(0);
   const [payCheck, setPaycheck] = useState(1000);
 
   const getDecision = () => {
+    setdecisionCount(decisionCount=decisionCount+1);
     const max = decisions.length;
     const decision = Math.floor(Math.random() * (max - 0)) + 0;
-
+    
     setCurrentDecision(decisions[decision]);
   };
 
@@ -101,6 +102,8 @@ const App = ({ }) => {
         setdate={setdate}
         payCheck={payCheck}
         setPaycheck={setPaycheck}
+        decisionCount={decisionCount}
+        setdecisionCount={setdecisionCount}
       />
       <div class="buttons">
 
@@ -132,12 +135,12 @@ const App = ({ }) => {
           type="submit"
           value="Next"
 
-          onClick={() => {
+          onClick={() => {          
+
             getDecision();
-            decisionCount = decisionCount + 1;
-            console.log(decisionCount)
+            
             if (decisionCount % 4 === 0) {
-              balance = balance + payCheck
+              setBalance(balance + payCheck)
             }
             date = date + 1
             setdate(date);

@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useState }  from "react";
 import "jquery";
 import "bootstrap/dist/js/bootstrap";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/css/bootstrap.css";
 
-function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck, setPaycheck, decisionCount }) {
+
+function InfoBox({decisionCount, setdecisionCount, currentDecision, balance, setBalance, date, setdate, payCheck, setPaycheck }) {
   if (!currentDecision) {
     return (
       <div
@@ -34,6 +35,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
 
 
   return (
+
     <div
       class="l-bg-light"
       style={{
@@ -44,6 +46,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
         padding: 10,
       }}
     >
+      
       <div
         style={{
           display: "flex",
@@ -59,7 +62,7 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
 
         <span>
           <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Date</p>
-          <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>Week: {date}</p>
+          <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>Week: {decisionCount}</p>
         </span>
 
         <span>
@@ -100,10 +103,10 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
           class="btn btn-primary btn-rounded btn-lg"
           style={{ justifyContent: "center", borderRadius: 40 }}
           onClick={() => {
-
+            
             let newBalance = balance - currentDecision.amount;
             let newpayCheck = payCheck + currentDecision.pay;
-
+            
             setBalance(newBalance);
             setPaycheck(newpayCheck);
 
