@@ -102,11 +102,11 @@ function InfoBox({ currentDecision, balance, setBalance, date, setdate, payCheck
 
           }}
         >
-          Yes
+          Buy
         </button>
         <button
           class="btn btn-dark btn-rounded btn-lg"
-          style={{ marginLeft: 20, borderRadius: 40 }}>No</button>
+          style={{ marginLeft: 20, borderRadius: 40 }}>Pass</button>
       </div>
 
     </div>
