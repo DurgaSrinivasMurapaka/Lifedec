@@ -1,42 +1,63 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
-import InfoBox from "./InfoBox";
-//test command for commit
+import React, { useState } from "react";
+import InfoBox from "./Components/InfoBox";
+import Popup from 'reactjs-popup';
+import "jquery";
+import "bootstrap/dist/js/bootstrap";
+import "popper.js/dist/umd/popper"
+import "bootstrap/dist/css/bootstrap.css"
 
-const App = () => {
+
+const App = ({ }) => {
   let decisions = [
     {
       id: 1,
-      question: "Do you want to buy Lemonade Stand",
+      question: "Icecream stand for sale. Owner wants to sell cheap",
       amount: 1000,
-      pay:50
+      pay: 50
     },
     {
       id: 2,
-      question: "Do you want to buy Lemonade Stand 2",
-      amount: 200,
-      pay:50
+      question: "Do you want to buy Bycicle shop",
+      amount: 1430,
+      pay: 80
 
     },
     {
       id: 3,
-      question: "Do you want to buy Lemonade Stand 3",
-      amount: 300,
-      pay:50
+      question: "Do you want to buy Juice shop",
+      amount: 1500,
+      pay: 50
 
     },
     {
       id: 4,
-      question: "Do you want to buy Lemonade Stand 4",
-      amount: 400,
-      pay:50
+      question: "Mechanic Shop goes for sale",
+      amount: 1100,
+      pay: 59
+
+    },
+    {
+      id: 5,
+      question: "Grocery store for sale",
+      amount: 4000,
+      pay: 485
+
+    },
+    {
+      id: 6,
+      question: "Plumberware shop is on sale",
+      amount: 6790,
+      pay: 510
 
     },
   ];
+  let decisionCount = 0;
 
   const [currentDecision, setCurrentDecision] = useState();
 
   const [balance, setBalance] = useState(1000);
+  const [date, setdate] = useState(0);
   const [payCheck, setPaycheck] = useState(1000);
 
   const getDecision = () => {
@@ -47,59 +68,87 @@ const App = () => {
   };
 
 
-  // useEffect(() => {
-  //   let isUnmounted = false;
 
-  //   setTimeout(() => {
-  //     if (!isUnmounted) {
-  //       let newPaycheck = payCheck + 50;
-  //       setPayCheck(newPaycheck);
-  //     }
-  //   }, 5000);
+  // // useEffect(() => {
+  // //   let isUnmounted = false;
 
-  //   return () => {
-  //     isUnmounted = true;
-  //   };
-  // }, [payCheck]);
+  // //   setTimeout(() => {
+  // //     if (!isUnmounted) {
+  // //       let newPaycheck = payCheck + 50;
+  // //       setPayCheck(newPaycheck);
+  // //     }
+  // //   }, 5000);
+
+  // //   return () => {
+  // //     isUnmounted = true;
+  // //   };
+  // // }, [payCheck]);
+
+
   return (
+
     <div
-      className="container"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        paddingTop: 30,
-      }}
+      className="cont"
+
     >
+
+
       <InfoBox
         currentDecision={currentDecision}
         balance={balance}
         setBalance={setBalance}
+        date={date}
+        setdate={setdate}
         payCheck={payCheck}
         setPaycheck={setPaycheck}
       />
       <div class="buttons">
-        <button
+
+        <Popup trigger={<button class="btn_danger"
           name="submit"
-          class="button1"
+          className="button1"
           type="submit"
           value="Ledger"
           onclick="myFunction()"
         >
+
           <span>Ledger</span>
-        </button>
+        </button>}
+          position="left center"
+          
+        >
+          <span style={{ color: "white"}}>Coming soon</span>
+
+
+
+        </Popup>
+
+
+
         <div class="space"></div>
         <button
           name="submit"
           class="button"
           type="submit"
           value="Next"
-          onClick={getDecision}
+
+          onClick={() => {
+            getDecision();
+            decisionCount = decisionCount + 1;
+            console.log(decisionCount)
+            if (decisionCount % 4 === 0) {
+              balance = balance + payCheck
+            }
+            date = date + 1
+            setdate(date);
+          }}
         >
           Next Decision
         </button>
+
         <div class="space"></div>
-        <button
+
+        <Popup trigger={<button
           name="submit"
           class="button1"
           type="submit"
@@ -107,8 +156,16 @@ const App = () => {
           onclick="myFunction3()"
         >
           <span>Stats</span>
-        </button>
+        </button>}
+          position="right center"
+        >
+          <span style={{ color: "white", paddingLeft:"10px" }}>Coming soon</span>
+
+
+        </Popup>
         <p id="saved"></p>
+
+
       </div>
     </div>
   );
