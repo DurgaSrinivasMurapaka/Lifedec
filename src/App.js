@@ -157,9 +157,10 @@ const App = ({ }) => {
           value="Ledger"
           onclick="myFunction()"
         >
+          
           <span><h5>Info</h5></span>
         </button>} modal>
-
+        {close => (
           <div class="card bg-light mb-3" >
             <div class="card-header">Life Decisions</div>
             <div class="card-body">
@@ -171,10 +172,20 @@ const App = ({ }) => {
                 4. Gain up assets and become financially stable.<br/>
 
                 <h5 style={{textAlign:"center",paddingTop:"12px", paddingBottom:"10px"}}>Good Luck!</h5>
+                <button onClick={close} class="btn btn-primary" 
+                style={{
+                display:"flex",
+                alignItems:"center",
+                justifycontent:"center",
+                textAlign:"center"
+                
+              }}>Close</button>
 
+                
               </p>
             </div>
           </div>
+            )}
         </Popup>
 
         {/* <Popup trigger={<button
