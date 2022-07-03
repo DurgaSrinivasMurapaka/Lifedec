@@ -1,39 +1,57 @@
 import "./App.css";
 import React, { useState } from "react";
-import InfoBox from "./InfoBox";
-
-//test command for commit
+import InfoBox from "./Components/InfoBox";
+import Popup from 'reactjs-popup';
+import "jquery";
+import "bootstrap/dist/js/bootstrap";
+import "popper.js/dist/umd/popper"
+import "bootstrap/dist/css/bootstrap.css"
 
 const App = ({}) => {
   let decisions = [
     {
       id: 1,
-      question: "Do you want to buy Icecream Stand? Cost: 1000$ Paycheck: 50$ ",
+      question: "Icecream stand for sale. Owner wants to sell cheap",
       amount: 1000,
       pay:50
     },
     {
       id: 2,
       question: "Do you want to buy Bycicle shop",
-      amount: 200,
-      pay:50
+      amount: 1430,
+      pay:80
 
     },
     {
       id: 3,
       question: "Do you want to buy Juice shop",
-      amount: 300,
+      amount: 1500,
       pay:50
 
     },
     {
       id: 4,
-      question: "Do you want to buy Mechanic Shop",
-      amount: 400,
-      pay:50
+      question: "Mechanic Shop goes for sale",
+      amount: 1100,
+      pay:59
+
+    },
+    {
+      id: 5,
+      question: "Grocery store for sale",
+      amount: 4000,
+      pay:485
+
+    },
+    {
+      id: 6,
+      question: "Plumberware shop is on sale",
+      amount: 6790,
+      pay:510
 
     },
   ];
+  let decisionCount = 0;
 
   const [currentDecision, setCurrentDecision] = useState();
 
@@ -48,8 +66,6 @@ const App = ({}) => {
     setCurrentDecision(decisions[decision]);
   };
 
-
-  let decisionCount = 0;
   
 
   // // useEffect(() => {
@@ -69,15 +85,13 @@ const App = ({}) => {
 
 
   return (
+    
     <div
-      className="container"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        paddingTop: 30,
-      }}
+      className="cont"
+      
     >
+      
+
       <InfoBox
         currentDecision={currentDecision}
         balance={balance}
@@ -88,15 +102,23 @@ const App = ({}) => {
         setPaycheck={setPaycheck}
       />
       <div class="buttons">
-        <button
+        
+      <Popup trigger={<button class="btn_danger"
           name="submit"
           class="button1"
           type="submit"
           value="Ledger"
           onclick="myFunction()"
         >
+          
           <span>Ledger</span>
-        </button>
+        </button>}
+        position="left center"
+        >
+        Coming soon
+        
+
+        </Popup>
 
         
 
@@ -109,18 +131,20 @@ const App = ({}) => {
           
           onClick= {()=>{getDecision(); 
             decisionCount = decisionCount +1;
+            console.log(decisionCount)
             if(decisionCount%4===0){
               balance = balance +payCheck
             }
+            date = date +1
+            setdate(date);
           }}
         >
           Next Decision
         </button>
 
-
-
         <div class="space"></div>
-        <button
+
+        <Popup trigger={<button
           name="submit"
           class="button1"
           type="submit"
@@ -128,8 +152,16 @@ const App = ({}) => {
           onclick="myFunction3()"
         >
           <span>Stats</span>
-        </button>
+        </button>} 
+        position="right center"
+        >
+        Coming soon
+        
+
+        </Popup>
         <p id="saved"></p>
+
+        
       </div>
     </div>
   );
