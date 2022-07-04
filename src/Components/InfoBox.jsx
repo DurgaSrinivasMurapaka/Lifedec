@@ -3,9 +3,10 @@ import "jquery";
 import "bootstrap/dist/js/bootstrap";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/css/bootstrap.css";
+import Popup from 'reactjs-popup';
 
 
-function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecision, balance, setBalance, date, setdate, payCheck, setPaycheck }) {
+function InfoBox({ flag, setflag, decisionCount, setdecisionCount, currentDecision, balance, setBalance, date, setdate, payCheck, setPaycheck }) {
   if (!currentDecision) {
     return (
       <div
@@ -22,12 +23,12 @@ function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecisio
           alignContent: "center",
         }}
       >
-        <div button class="btn btn-danger l-bg-red " style={{ 
-       width:"60%", justifyContent: "center", verticalAlign:"middle"
+        <div button class="btn btn-danger l-bg-red " style={{
+          width: "60%", justifyContent: "center", verticalAlign: "middle"
 
-      }}>
-        <h5>Click Next Decision to start</h5>
-      </div>
+        }}>
+          <h5>Click Next Decision to start</h5>
+        </div>
       </div>
     );
   }
@@ -35,6 +36,7 @@ function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecisio
 
 
   return (
+    
 
     <div
       class="l-bg-light"
@@ -46,29 +48,29 @@ function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecisio
         padding: 10,
       }}
     >
-      
+
       <div
         style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
           textAlign: "center",
-          alignItems:"center",
-          verticalAlign:"middle"
+          alignItems: "center",
+          verticalAlign: "middle"
         }}
       >
-        <span style={{display:"inline-block"}}>
-          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Monthly Profit </p>
+        <span style={{ display: "inline-block" }}>
+          <p style={{ marginTop: 0, paddingtop: 0, color: "black" }}>Monthly Profit </p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>{payCheck}₹</p>
         </span>
 
-        <span style={{display:"inline-block"}}>
-          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Date</p>
+        <span style={{ display: "inline-block" }}>
+          <p style={{ marginTop: 0, paddingtop: 0, color: "black" }}>Date</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>Week: {decisionCount}</p>
         </span>
 
-        <span style={{display:"inline-block"}}>
-          <p style={{ marginTop: 0, paddingtop: 0, color:"black" }}>Balance</p>
+        <span style={{ display: "inline-block" }}>
+          <p style={{ marginTop: 0, paddingtop: 0, color: "black" }}>Balance</p>
           <p class="strong" style={{ marginTop: 0, paddingtop: 0 }}>{balance}₹</p>
         </span>
       </div>
@@ -105,18 +107,19 @@ function InfoBox({flag, setflag, decisionCount, setdecisionCount, currentDecisio
           class="btn btn-primary btn-rounded btn-lg"
           style={{ justifyContent: "center", borderRadius: 40 }}
           onClick={() => {
-            if (flag===0 && balance-currentDecision.amount>=0){
+            if (flag === 0 && balance - currentDecision.amount >= 0) {
               let newBalance = balance - currentDecision.amount;
               let newpayCheck = payCheck + currentDecision.pay;
-              
+
               setBalance(newBalance);
               setPaycheck(newpayCheck);
               setflag(1);
             }
-            else if( balance-currentDecision.amount<=0){
-              alert("You cant afford it!");
+            else if (balance - currentDecision.amount <= 0) {
+              alert("Balance not sufficient");
+
             }
-            else{ 
+            else {
               alert("Bought Already!");
             }
 
