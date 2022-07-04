@@ -114,14 +114,31 @@ const App = ({ }) => {
           onclick="myFunction()"
         >
 
-          <span><h5>Stats</h5></span>
-        </button>}
-          position="left center"
+        <span><h5>Info</h5></span>
+        </button>} modal>
+          {close => (
+            <div class="card bg-light mb-3" >
+              <div class="card-header">Life Decisions</div>
+              <div class="card-body">
+                <h5 class="card-title">Ledger</h5>
+                <p class="card-text">
+                
 
-        >
-          <span style={{ color: "white" }}>Coming soon</span>
+                  <h5 style={{ textAlign: "center", paddingTop: "12px", paddingBottom: "10px" }}>Coming Soon!</h5>
+                  <button onClick={close} class="btn btn-primary"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifycontent: "center",
+                      textAlign: "center"
+
+                    }}>Close</button>
 
 
+                </p>
+              </div>
+            </div>
+          )}
 
         </Popup>
 
@@ -157,35 +174,35 @@ const App = ({ }) => {
           value="Ledger"
           onclick="myFunction()"
         >
-          
+
           <span><h5>Info</h5></span>
         </button>} modal>
-        {close => (
-          <div class="card bg-light mb-3" >
-            <div class="card-header">Life Decisions</div>
-            <div class="card-body">
-              <h5 class="card-title">Information:</h5>
-              <p class="card-text">
-                1. Every Decision passed equalled for one week.<br/>
-                2. Every four weeks equalled for one month, <br/>
-                3. For every month, You will receive a payment from your assets.<br/>
-                4. Gain up assets and become financially stable.<br/>
+          {close => (
+            <div class="card bg-light mb-3" >
+              <div class="card-header">Life Decisions</div>
+              <div class="card-body">
+                <h5 class="card-title">Information:</h5>
+                <p class="card-text">
+                  1. Every Decision passed equalled for one week.<br />
+                  2. Every four weeks equalled for one month, <br />
+                  3. For every month, You will receive a payment from your assets.<br />
+                  4. Gain up assets and become financially stable.<br />
 
-                <h5 style={{textAlign:"center",paddingTop:"12px", paddingBottom:"10px"}}>Good Luck!</h5>
-                <button onClick={close} class="btn btn-primary" 
-                style={{
-                display:"flex",
-                alignItems:"center",
-                justifycontent:"center",
-                textAlign:"center"
-                
-              }}>Close</button>
+                  <h5 style={{ textAlign: "center", paddingTop: "12px", paddingBottom: "10px" }}>Good Luck!</h5>
+                  <button onClick={close} class="btn btn-primary"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifycontent: "center",
+                      textAlign: "center"
 
-                
-              </p>
+                    }}>Close</button>
+
+
+                </p>
+              </div>
             </div>
-          </div>
-            )}
+          )}
         </Popup>
 
         {/* <Popup trigger={<button
